@@ -347,3 +347,7 @@ footer {
     margin-top: 2rem;
   }
 }
+
+footer{
+  display: none
+}
