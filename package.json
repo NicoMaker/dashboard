@@ -1,0 +1,14 @@
+{
+  "name": "dashboard-server",
+  "version": "1.0.0",
+  "description": "Dashboard per gestione servizi con IP detection e cron",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3"
+  }
+}
