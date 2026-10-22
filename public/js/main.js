@@ -11,13 +11,17 @@ applyTheme(getTheme());
 
 const header = Header({
   onThemeToggle: () =>
-    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"),
+    applyTheme(
+      document.documentElement.dataset.theme === "dark" ? "light" : "dark",
+    ),
 });
 const grid = ServiceGrid();
 const toolbar = Toolbar({ onChange: (f) => grid.applyFilter(f) });
 const footer = Footer();
 
-document.getElementById("app").append(header.el, toolbar.el, grid.el, footer.el);
+document
+  .getElementById("app")
+  .append(header.el, toolbar.el, grid.el, footer.el);
 
 async function refreshStatus() {
   try {

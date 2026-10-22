@@ -42,7 +42,10 @@ export function Toolbar({ onChange }) {
   }
 
   const el = h("div", { class: "toolbar" }, [
-    h("label", { class: "search" }, [h("span", { class: "search__icon" }, "🔍"), search]),
+    h("label", { class: "search" }, [
+      h("span", { class: "search__icon" }, "🔍"),
+      search,
+    ]),
     chips,
   ]);
 

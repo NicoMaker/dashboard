@@ -57,7 +57,7 @@ async function checkAll(services) {
       return {
         id: s.id,
         online: up.length > 0,
-        status: up.length ? up[0].status : links[0]?.status ?? "invalid",
+        status: up.length ? up[0].status : (links[0]?.status ?? "invalid"),
         latency: best,
         links,
       };

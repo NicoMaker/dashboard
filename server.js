@@ -17,7 +17,9 @@ const server = app.listen(PORT, "0.0.0.0", async () => {
   console.log(`📍 Localhost:   http://localhost:${PORT}`);
   console.log(`\n--------------------------------------`);
   console.log(`📋 Servizi configurati (${services.length}):`);
-  services.forEach((s) => console.log(`   ${s.icon || "•"} ${s.name} → ${s.url}`));
+  services.forEach((s) =>
+    console.log(`   ${s.icon || "•"} ${s.name} → ${s.url}`),
+  );
   console.log(`📄 Config: ${SERVICES_FILE}`);
   console.log(`🔥 Hot-reload attivo (modifica services.json senza riavviare)`);
   console.log(`--------------------------------------\n`);
@@ -38,5 +40,9 @@ process.on("SIGINT", () => {
   server.close(() => process.exit(0));
 });
 
-process.on("uncaughtException", (err) => console.error("💥 Eccezione non gestita:", err));
-process.on("unhandledRejection", (err) => console.error("💥 Promise non gestita:", err));
+process.on("uncaughtException", (err) =>
+  console.error("💥 Eccezione non gestita:", err),
+);
+process.on("unhandledRejection", (err) =>
+  console.error("💥 Promise non gestita:", err),
+);

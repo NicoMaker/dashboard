@@ -8,14 +8,17 @@ export function h(tag, props = {}, children = []) {
     if (value == null || value === false) continue;
     if (key === "class") node.className = value;
     else if (key === "style" && typeof value === "object") {
-      for (const [prop, val] of Object.entries(value)) node.style.setProperty(prop, val);
+      for (const [prop, val] of Object.entries(value))
+        node.style.setProperty(prop, val);
     } else if (key.startsWith("on") && typeof value === "function") {
       node.addEventListener(key.slice(2).toLowerCase(), value);
     } else node.setAttribute(key, value === true ? "" : value);
   }
   for (const child of [].concat(children)) {
     if (child == null || child === false) continue;
-    node.append(child.nodeType ? child : document.createTextNode(String(child)));
+    node.append(
+      child.nodeType ? child : document.createTextNode(String(child)),
+    );
   }
   return node;
 }

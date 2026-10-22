@@ -33,7 +33,8 @@ export function ServiceGrid() {
     render((s) => {
       const okCat = category === "Tutti" || s.category === category;
       const okText =
-        !q || `${s.name} ${s.description} ${s.category}`.toLowerCase().includes(q);
+        !q ||
+        `${s.name} ${s.description} ${s.category}`.toLowerCase().includes(q);
       return okCat && okText;
     });
   }

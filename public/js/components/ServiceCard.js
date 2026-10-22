@@ -30,7 +30,10 @@ export function ServiceCard(service, index) {
     "article",
     {
       class: "card" + (multi ? " card--multi" : ""),
-      style: { "--accent": service.color || "#6366f1", "animation-delay": `${index * 0.08}s` },
+      style: {
+        "--accent": service.color || "#6366f1",
+        "animation-delay": `${index * 0.08}s`,
+      },
     },
     [
       h("div", { class: "card__header" }, [
@@ -42,7 +45,11 @@ export function ServiceCard(service, index) {
       h("p", {}, service.description || ""),
       multi
         ? h("div", { class: "card__actions" }, [
-            h("div", { class: "card__btns" }, linkEls.map((l) => l.a)),
+            h(
+              "div",
+              { class: "card__btns" },
+              linkEls.map((l) => l.a),
+            ),
             latency,
           ])
         : h("div", { class: "card__footer" }, [linkEls[0]?.a, latency]),
