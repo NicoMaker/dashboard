@@ -1,38 +1,23 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Center - Dashboard</title>
-    <link rel="stylesheet" href="/style.css" />
+    <title>Control Center - Studio Commercialista</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/toolbar.css" />
+    <link rel="stylesheet" href="/css/card.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>"
     />
   </head>
   <body>
     <div class="bg-glow"></div>
-
-    <header>
-      <h1>🚀 Control Center</h1>
-      <p>Dashboard di gestione servizi</p>
-      <div class="status-badge" id="globalStatus">
-        <span class="dot"></span>
-        <span id="globalStatusText">Verifica sistemi...</span>
-      </div>
-    </header>
-
-    <main class="grid" id="servicesGrid">
-      <!-- Card generate dinamicamente via JS -->
-    </main>
-
-    <footer>
-      <p>© <span id="year"></span> Server Dashboard · Node.js + Express</p>
-      <p class="last-update">
-        Ultimo aggiornamento: <span id="lastUpdate">-</span>
-      </p>
-    </footer>
-
-    <script src="/app.js"></script>
+    <div id="app" class="app"></div>
+    <noscript>Per usare il Control Center è necessario abilitare JavaScript.</noscript>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>
