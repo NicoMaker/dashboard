@@ -9,8 +9,6 @@ export function Footer() {
       `© ${new Date().getFullYear()} Control Center Studio Commercialisti`,
     ),
     h("p", { class: "app-footer__update" }, [
-      "Ultimo aggiornamento: ",
-      updated,
     ]),
   ]);
 
