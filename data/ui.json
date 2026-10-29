@@ -37,7 +37,6 @@
     "error": "Errore caricamento servizi: {message}"
   },
   "footer": {
-    "copyright": "© {year} Control Center Studio Commercialisti",
-    "lastCheck": "Ultimo controllo: "
+    "copyright": "© {year} Control Center Studio Commercialisti"
   }
 }

@@ -26,13 +26,23 @@ document
   .getElementById("app")
   .append(header.el, toolbar.el, grid.el, footer.el);
 
+/** Ricarica la pagina a mezzanotte del 1° gennaio per aggiornare l'anno nel footer. */
+function scheduleYearRefresh() {
+  const now = new Date();
+  const nextYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0, 0);
+  const delay = nextYear.getTime() - now.getTime();
+  setTimeout(() => {
+    location.reload();
+  }, delay);
+}
+scheduleYearRefresh();
+
 async function refreshStatus() {
   try {
     const data = await fetchStatus();
     grid.setStatuses(data.services);
     const online = data.services.filter((s) => s.online).length;
     header.badge.update(online, data.services.length);
-    footer.setUpdated(data.timestamp);
   } catch (err) {
     console.error("Errore check status:", err);
   }
