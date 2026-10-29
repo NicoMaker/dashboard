@@ -6,7 +6,9 @@ const DATA_DIR = path.join(ROOT, "data");
 
 function readServer() {
   try {
-    return JSON.parse(fs.readFileSync(path.join(DATA_DIR, "server.json"), "utf-8"));
+    return JSON.parse(
+      fs.readFileSync(path.join(DATA_DIR, "server.json"), "utf-8"),
+    );
   } catch {
     return {};
   }

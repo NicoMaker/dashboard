@@ -32,7 +32,8 @@ export function ServiceGrid() {
   function applyFilter({ query, category }) {
     const q = query.trim().toLowerCase();
     render((s) => {
-      const okCat = category === t("toolbar.allCategories") || s.category === category;
+      const okCat =
+        category === t("toolbar.allCategories") || s.category === category;
       const okText =
         !q ||
         `${s.name} ${s.description} ${s.category}`.toLowerCase().includes(q);

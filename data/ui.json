@@ -1,7 +1,14 @@
 {
   "title": "Control Center - Studio Commercialista",
-  "brand": { "name": "Control Center", "tagline": "Gestionali dello studio commercialista" },
-  "theme": { "storageKey": "cc-theme", "label": "Cambia tema", "tooltip": "Cambia tema chiaro/scuro" },
+  "brand": {
+    "name": "Control Center",
+    "tagline": "Gestionali dello studio commercialista"
+  },
+  "theme": {
+    "storageKey": "cc-theme",
+    "label": "Cambia tema",
+    "tooltip": "Cambia tema chiaro/scuro"
+  },
   "status": {
     "refreshMs": 15000,
     "checking": "verifica",

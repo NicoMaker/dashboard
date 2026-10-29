@@ -12,7 +12,10 @@
   border: 1px dashed var(--border);
   border-radius: var(--radius);
 }
-.grid__message.is-error { color: var(--red); border-color: var(--red); }
+.grid__message.is-error {
+  color: var(--red);
+  border-color: var(--red);
+}
 
 .card {
   --accent: var(--brand);
@@ -26,7 +29,10 @@
   color: var(--text);
   text-decoration: none;
   overflow: hidden;
-  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 /* Barra di stato sul bordo sinistro: verde online, rossa offline */
@@ -38,8 +44,14 @@
   background: var(--text-muted);
   opacity: 0.5;
 }
-.card[data-state="online"]::before { background: var(--green); opacity: 1; }
-.card[data-state="offline"]::before { background: var(--red); opacity: 1; }
+.card[data-state="online"]::before {
+  background: var(--green);
+  opacity: 1;
+}
+.card[data-state="offline"]::before {
+  background: var(--red);
+  opacity: 1;
+}
 
 .card:hover {
   background: var(--surface-hover);
@@ -64,7 +76,11 @@
   background: color-mix(in srgb, var(--accent) 16%, transparent);
 }
 
-.card__category { margin-bottom: 0.2rem; font-size: 0.85rem; color: var(--text-muted); }
+.card__category {
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
 
 .card h2 {
   font-family: var(--font-display);
@@ -82,7 +98,8 @@
   flex: 1;
 }
 
-.card__footer, .card__actions {
+.card__footer,
+.card__actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,13 +107,32 @@
   padding-top: 0.9rem;
   border-top: 1px solid var(--border);
 }
-.card__actions { flex-wrap: wrap; position: relative; z-index: 3; }
+.card__actions {
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+}
 
-.card__link { color: var(--text); font-weight: 600; font-size: 0.95rem; }
-.card:hover .card__link { color: var(--accent); }
-.card__link--stretch::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.card__link {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.card:hover .card__link {
+  color: var(--accent);
+}
+.card__link--stretch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
 
-.card__latency { font-size: 0.82rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.card__latency {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
 
 .status-dot {
   display: inline-flex;
@@ -111,15 +147,33 @@
   color: var(--text-muted);
 }
 .status-dot::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%;
-  background: currentColor; animation: blink 2s infinite;
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 2s infinite;
 }
-.status-dot.online { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border)); }
-.status-dot.offline { color: var(--red); border-color: color-mix(in srgb, var(--red) 40%, var(--border)); }
-.status-dot.offline::before { animation: none; }
-.status-dot.checking { color: var(--yellow); }
+.status-dot.online {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 40%, var(--border));
+}
+.status-dot.offline {
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 40%, var(--border));
+}
+.status-dot.offline::before {
+  animation: none;
+}
+.status-dot.checking {
+  color: var(--yellow);
+}
 
-.card__btns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.card__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .card__btn {
   display: inline-flex;
   align-items: center;
@@ -133,10 +187,24 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
 }
-.card__btn:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.card__btn:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
 
-.link-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-muted); }
-.link-dot.online { background: var(--green); }
-.link-dot.offline { background: var(--red); }
+.link-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+}
+.link-dot.online {
+  background: var(--green);
+}
+.link-dot.offline {
+  background: var(--red);
+}

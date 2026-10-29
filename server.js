@@ -21,7 +21,9 @@ const server = app.listen(PORT, "0.0.0.0", async () => {
     console.log(`   ${s.icon || "•"} ${s.name} → ${s.url}`),
   );
   console.log(`📄 Config: ${SERVICES_FILE}`);
-  console.log(`🔥 Hot-reload attivo (modifica i file in data/ senza riavviare)`);
+  console.log(
+    `🔥 Hot-reload attivo (modifica i file in data/ senza riavviare)`,
+  );
   console.log(`--------------------------------------\n`);
 });
 

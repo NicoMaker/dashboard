@@ -6,12 +6,20 @@
   margin-bottom: 1.5rem;
 }
 
-.search { position: relative; flex: 1 1 280px; max-width: 400px; }
+.search {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 400px;
+}
 
 .search__icon {
-  position: absolute; left: 0.95rem; top: 50%;
+  position: absolute;
+  left: 0.95rem;
+  top: 50%;
   transform: translateY(-50%);
-  display: grid; color: var(--text-muted); pointer-events: none;
+  display: grid;
+  color: var(--text-muted);
+  pointer-events: none;
 }
 
 .search__input {
@@ -25,11 +33,23 @@
   font: inherit;
   font-size: 0.95rem;
 }
-.search__input::placeholder { color: var(--text-muted); }
-.search__input:hover { border-color: var(--text-muted); }
-.search__input:focus { border-color: var(--brand); outline: 2px solid color-mix(in srgb, var(--brand) 30%, transparent); outline-offset: 0; }
+.search__input::placeholder {
+  color: var(--text-muted);
+}
+.search__input:hover {
+  border-color: var(--text-muted);
+}
+.search__input:focus {
+  border-color: var(--brand);
+  outline: 2px solid color-mix(in srgb, var(--brand) 30%, transparent);
+  outline-offset: 0;
+}
 
-.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 
 .chip {
   min-height: 40px;
@@ -42,9 +62,15 @@
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
-.chip:hover { color: var(--text); background: var(--surface); }
+.chip:hover {
+  color: var(--text);
+  background: var(--surface);
+}
 .chip.is-active {
   color: var(--on-brand);
   background: var(--brand);

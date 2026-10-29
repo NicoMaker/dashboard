@@ -23,8 +23,13 @@ export const icon = (name) => S.icons[name] ?? "";
 function applyThemeVars(theme = {}) {
   const css = Object.entries(theme)
     .map(([mode, vars]) => {
-      const sel = mode === "dark" ? ':root,:root[data-theme="dark"]' : `:root[data-theme="${mode}"]`;
-      const body = Object.entries(vars).map(([k, v]) => `${k}:${v}`).join(";");
+      const sel =
+        mode === "dark"
+          ? ':root,:root[data-theme="dark"]'
+          : `:root[data-theme="${mode}"]`;
+      const body = Object.entries(vars)
+        .map(([k, v]) => `${k}:${v}`)
+        .join(";");
       return `${sel}{${body}}`;
     })
     .join("\n");

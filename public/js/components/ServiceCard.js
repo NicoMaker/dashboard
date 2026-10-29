@@ -69,7 +69,9 @@ export function ServiceCard(service, index) {
       const s = byUrl.get(l.url);
       if (!s) return;
       l.pill.className = `link-dot ${s.online ? "online" : "offline"}`;
-      l.a.title = s.online ? t("card.onlineTitle", { latency: s.latency }) : t("card.offlineTitle");
+      l.a.title = s.online
+        ? t("card.onlineTitle", { latency: s.latency })
+        : t("card.offlineTitle");
     });
   }
 

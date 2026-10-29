@@ -1,4 +1,6 @@
-.app-header { margin-bottom: 2rem; }
+.app-header {
+  margin-bottom: 2rem;
+}
 
 .app-header__top {
   display: flex;
@@ -8,7 +10,12 @@
   margin-bottom: 1.5rem;
 }
 
-.brand { display: flex; align-items: center; gap: 1rem; min-width: 0; }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
 
 .brand__logo {
   display: grid;
@@ -30,7 +37,11 @@
   letter-spacing: -0.02em;
 }
 
-.brand p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.2rem; }
+.brand p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+}
 
 /* Stato globale: una riga leggibile a colpo d'occhio */
 .status-badge {
@@ -47,11 +58,27 @@
   font-weight: 600;
 }
 .status-badge .dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: currentColor; animation: blink 2s infinite;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 2s infinite;
 }
-.status-badge.checking { color: var(--text-muted); }
-.status-badge.online { color: var(--green); border-left-color: var(--green); }
-.status-badge.warning { color: var(--yellow); border-left-color: var(--yellow); }
-.status-badge.offline { color: var(--red); border-left-color: var(--red); }
-.status-badge span:last-child { color: var(--text); }
+.status-badge.checking {
+  color: var(--text-muted);
+}
+.status-badge.online {
+  color: var(--green);
+  border-left-color: var(--green);
+}
+.status-badge.warning {
+  color: var(--yellow);
+  border-left-color: var(--yellow);
+}
+.status-badge.offline {
+  color: var(--red);
+  border-left-color: var(--red);
+}
+.status-badge span:last-child {
+  color: var(--text);
+}
