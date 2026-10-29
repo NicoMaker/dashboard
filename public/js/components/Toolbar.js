@@ -1,18 +1,25 @@
 import { h, clear } from "../lib/dom.js";
+import { t, icon } from "../lib/settings.js";
 
 /**
  * Barra con ricerca testuale e filtri per categoria.
  * onChange({ query, category })
  */
+function searchIcon() {
+  const el = h("span", { class: "search__icon" });
+  el.innerHTML = icon("search");
+  return el;
+}
+
 export function Toolbar({ onChange }) {
-  const state = { query: "", category: "Tutti" };
+  const state = { query: "", category: t("toolbar.allCategories") };
   const chips = h("div", { class: "chips", role: "tablist" });
 
   const search = h("input", {
     class: "search__input",
     type: "search",
-    placeholder: "Cerca un gestionale…",
-    "aria-label": "Cerca un gestionale",
+    placeholder: t("toolbar.searchPlaceholder"),
+    "aria-label": t("toolbar.searchLabel"),
     onInput: (e) => {
       state.query = e.target.value;
       onChange({ ...state });
@@ -21,7 +28,7 @@ export function Toolbar({ onChange }) {
 
   function setCategories(categories) {
     clear(chips);
-    ["Tutti", ...categories].forEach((cat) => {
+    [t("toolbar.allCategories"), ...categories].forEach((cat) => {
       chips.append(
         h(
           "button",
@@ -43,7 +50,7 @@ export function Toolbar({ onChange }) {
 
   const el = h("div", { class: "toolbar" }, [
     h("label", { class: "search" }, [
-      h("span", { class: "search__icon" }, "🔍"),
+      searchIcon(),
       search,
     ]),
     chips,

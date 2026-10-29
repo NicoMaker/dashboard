@@ -1,5 +1,6 @@
 import { h, clear } from "../lib/dom.js";
 import { ServiceCard } from "./ServiceCard.js";
+import { t } from "../lib/settings.js";
 
 export function ServiceGrid() {
   const el = h("main", { class: "grid", id: "servicesGrid" });
@@ -17,12 +18,12 @@ export function ServiceGrid() {
   function render(predicate) {
     clear(el);
     if (!cards.length) {
-      el.append(message("Nessun servizio configurato in services.json"));
+      el.append(message(t("grid.empty")));
       return;
     }
     const visible = cards.filter((c) => predicate(c.service));
     if (!visible.length) {
-      el.append(message("Nessun gestionale corrisponde alla ricerca."));
+      el.append(message(t("grid.noResults")));
       return;
     }
     visible.forEach((c) => el.append(c.el));
@@ -31,7 +32,7 @@ export function ServiceGrid() {
   function applyFilter({ query, category }) {
     const q = query.trim().toLowerCase();
     render((s) => {
-      const okCat = category === "Tutti" || s.category === category;
+      const okCat = category === t("toolbar.allCategories") || s.category === category;
       const okText =
         !q ||
         `${s.name} ${s.description} ${s.category}`.toLowerCase().includes(q);

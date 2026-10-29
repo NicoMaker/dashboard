@@ -1,0 +1,36 @@
+{
+  "title": "Control Center - Studio Commercialista",
+  "brand": { "name": "Control Center", "tagline": "Gestionali dello studio commercialista" },
+  "theme": { "storageKey": "cc-theme", "label": "Cambia tema", "tooltip": "Cambia tema chiaro/scuro" },
+  "status": {
+    "refreshMs": 15000,
+    "checking": "verifica",
+    "online": "online",
+    "offline": "offline",
+    "badge": {
+      "checking": "Verifica sistemi...",
+      "allOnline": "Tutti i sistemi online ({online}/{total})",
+      "allOffline": "Sistemi offline (0/{total})",
+      "partial": "Parzialmente online ({online}/{total})"
+    }
+  },
+  "toolbar": {
+    "searchPlaceholder": "Cerca un gestionale…",
+    "searchLabel": "Cerca un gestionale",
+    "allCategories": "Tutti"
+  },
+  "card": {
+    "open": "Apri servizio",
+    "onlineTitle": "Online ({latency} ms)",
+    "offlineTitle": "Non raggiungibile"
+  },
+  "grid": {
+    "empty": "Nessun servizio configurato in data/services.json",
+    "noResults": "Nessun gestionale corrisponde alla ricerca.",
+    "error": "Errore caricamento servizi: {message}"
+  },
+  "footer": {
+    "copyright": "© {year} Control Center Studio Commercialisti",
+    "lastCheck": "Ultimo controllo: "
+  }
+}

@@ -1,11 +1,14 @@
 import { fetchServices, fetchStatus } from "./lib/api.js";
 import { applyTheme, getTheme } from "./lib/theme.js";
+import { loadSettings, t } from "./lib/settings.js";
 import { Header } from "./components/Header.js";
 import { Toolbar } from "./components/Toolbar.js";
 import { ServiceGrid } from "./components/ServiceGrid.js";
 import { Footer } from "./components/Footer.js";
 
-const STATUS_REFRESH_MS = 15000;
+await loadSettings();
+
+const STATUS_REFRESH_MS = t("status.refreshMs") || 15000;
 
 applyTheme(getTheme());
 
@@ -43,7 +46,7 @@ async function init() {
     grid.setServices(services);
     refreshStatus();
   } catch (err) {
-    grid.setError(`Errore caricamento servizi: ${err.message}`);
+    grid.setError(t("grid.error", { message: err.message }));
   }
 }
 

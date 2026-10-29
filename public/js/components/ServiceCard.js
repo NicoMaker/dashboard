@@ -1,12 +1,13 @@
 import { h } from "../lib/dom.js";
+import { t } from "../lib/settings.js";
 
-const LABELS = { checking: "verifica", online: "online", offline: "offline" };
+const label = (k) => t(`status.${k}`);
 
 export function ServiceCard(service, index) {
   const links = service.links || [];
   const multi = links.length > 1;
 
-  const dot = h("span", { class: "status-dot checking" }, LABELS.checking);
+  const dot = h("span", { class: "status-dot checking" }, label("checking"));
   const latency = h("span", { class: "card__latency" });
 
   // Un singolo accesso: tutta la card è cliccabile (link "stirato").
@@ -21,7 +22,7 @@ export function ServiceCard(service, index) {
         target: "_blank",
         rel: "noopener",
       },
-      multi ? [pill, l.label] : "Apri servizio →",
+      multi ? [pill, l.label] : t("card.open"),
     );
     return { a, pill, url: l.url };
   });
@@ -59,7 +60,7 @@ export function ServiceCard(service, index) {
   function setStatus({ online, latency: ms, links: linkStatus = [] }) {
     const state = online ? "online" : "offline";
     dot.className = `status-dot ${state}`;
-    dot.textContent = LABELS[state];
+    dot.textContent = label(state);
     latency.textContent = online && ms != null ? `${ms} ms` : "";
     el.dataset.state = state;
 
@@ -68,7 +69,7 @@ export function ServiceCard(service, index) {
       const s = byUrl.get(l.url);
       if (!s) return;
       l.pill.className = `link-dot ${s.online ? "online" : "offline"}`;
-      l.a.title = s.online ? `Online (${s.latency} ms)` : "Non raggiungibile";
+      l.a.title = s.online ? t("card.onlineTitle", { latency: s.latency }) : t("card.offlineTitle");
     });
   }
 
