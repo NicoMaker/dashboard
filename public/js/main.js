@@ -28,12 +28,13 @@ document
 
 /** Ricarica la pagina a mezzanotte del 1° gennaio per aggiornare l'anno nel footer. */
 function scheduleYearRefresh() {
-  const now = new Date();
-  const nextYear = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0, 0);
-  const delay = nextYear.getTime() - now.getTime();
-  setTimeout(() => {
-    location.reload();
-  }, delay);
+  // NB: setTimeout accetta al massimo 2^31-1 ms (~24,8 giorni). Con un ritardo
+  // maggiore scatta SUBITO -> reload in loop (la pagina "lampeggia" e non
+  // mostra mai i dati). Per questo si controlla l'anno ogni minuto.
+  const loadedYear = new Date().getFullYear();
+  setInterval(() => {
+    if (new Date().getFullYear() !== loadedYear) location.reload();
+  }, 60_000);
 }
 scheduleYearRefresh();
 
